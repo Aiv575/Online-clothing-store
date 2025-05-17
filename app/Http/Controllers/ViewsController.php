@@ -71,9 +71,7 @@ class ViewsController extends Controller
 
     public function categories(Category $categories)
     {
-        $categories = Category::all()->map(function ($category) {
-            return $category;
-        });
+        $categories = Category::with(['things.imageAttachment'])->get();
 
         return view("pages.category", [
             'categories' => $categories,
@@ -82,6 +80,8 @@ class ViewsController extends Controller
 
     public function category(Category $category)
     {
+        $category->load(['things.imageAttachment']);
+        
         return view("pages.things_of_the_category", [
             'category' => $category,
         ]);
@@ -96,7 +96,9 @@ class ViewsController extends Controller
 
     public function wishlist()
     {
-        $wishlists = Wishlist::with('thing')->where('user_id', auth()->id())->get();
+        $wishlists = Wishlist::with(['thing.imageAttachment'])
+        ->where('user_id', auth()->id())
+        ->get();
 
         return view('pages.wishlist', compact('wishlists'));
     }
