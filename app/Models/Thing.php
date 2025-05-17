@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Orchid\Attachment\Models\Attachment;
 
 class Thing extends Model
 {
@@ -43,5 +44,8 @@ class Thing extends Model
     {
         return $this->reviews()->avg('rating'); // Вычисляем средний рейтинг всех отзывов
     }
-
+    public function imageAttachment()
+    {
+        return $this->belongsTo(Attachment::class, 'image');
+    }
 }

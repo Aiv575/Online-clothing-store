@@ -22,7 +22,12 @@ class Category extends Model
 
     public function getRandomThingImageAttribute()
     {
-        $randomThing = $this->things()->inRandomOrder()->first();
-        return $randomThing ? $randomThing->image : null;
+        // Получаем случайный товар из категории с изображением
+        $randomThing = $this->things()
+            ->whereHas('imageAttachment')
+            ->inRandomOrder()
+            ->first();
+
+        return $randomThing ? $randomThing->imageAttachment->url() : null;
     }
 }
