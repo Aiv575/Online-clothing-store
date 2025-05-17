@@ -28,7 +28,7 @@
 
             <div class="card h-100">
                 <div class="card-body text-center">
-                    <img class="card-img-top mb-3" src="{{ $thing->image }}" alt="{{ $thing->name }}" style="max-width: 300px; height: auto; object-fit: cover; margin: 0 auto;">
+                    <img class="card-img-top mb-3" src="{{ $thing->image }}" alt="{{ $thing->name }}" style="max-width: 700px; height: auto; object-fit: cover; margin: 0 auto;">
                     <p>Рейтинг:
                         @php
                             $averageRating = $thing->averageRating(); // Получаем средний рейтинг

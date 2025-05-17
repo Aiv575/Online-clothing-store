@@ -10,7 +10,7 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm">
                     <!-- Изображение товара с улучшенной адаптивностью -->
-                    <img class="card-img-top" src="{{ $thing->image }}" alt="{{ $thing->name }}" style="height: 300px; object-fit: cover;">
+                    <img class="card-img-top" src="{{ $thing->imageAttachment->url() }}" alt="{{ $thing->name }}" style="height: 300px; object-fit: cover;">
 
                     <div class="card-body">
                         <h2 class="card-title text-center">{{ $thing->name }}</h2>

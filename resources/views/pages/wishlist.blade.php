@@ -3,7 +3,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center mb-4">Ваши товары в избранном</h1>
+            <h1 class="text-center mb-4">Ваш список желаний</h1>
 
             @if($wishlists->isEmpty())
                 <div class="alert alert-info text-center">У вас пока нет товаров в избранном.</div>
@@ -16,7 +16,7 @@
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 shadow-sm">
                             <!-- Изображение товара с улучшенной адаптивностью -->
-                            <img class="card-img-top" src="{{ $thing->image }}" alt="{{ $thing->name }}" style="height: 300px; object-fit: cover;">
+                            <img class="card-img-top" src="{{ $thing->imageAttachment->url() }}" alt="{{ $thing->name }}" style="height: 300px; object-fit: cover;">
 
                             <div class="card-body">
                                 <h2 class="card-title text-center">{{ $thing->name }}</h2>
