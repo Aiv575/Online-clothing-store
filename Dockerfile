@@ -15,8 +15,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Копируем проект
 COPY . /var/www/html
-
 WORKDIR /var/www/html
+
+# Установим public как DocumentRoot
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
 
 # Установка зависимостей Laravel
 RUN composer install --optimize-autoloader --no-dev
