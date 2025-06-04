@@ -1,13 +1,10 @@
 services:
   - type: web
-    name: laravel-sqlite
-    env: php
+    name: laravel-docker
+    env: docker
     plan: free
-    buildCommand: |
-      composer install --optimize-autoloader --no-dev
-      php artisan migrate --force
-      php artisan config:cache
-    startCommand: php artisan serve --host 0.0.0.0 --port 10000
+    buildCommand: ""
+    startCommand: ""
     envVars:
       - key: APP_ENV
         value: production
