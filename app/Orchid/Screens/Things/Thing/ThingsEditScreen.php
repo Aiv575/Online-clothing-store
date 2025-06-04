@@ -118,8 +118,16 @@ class ThingsEditScreen extends Screen
 
     public function createOrUpdate(Request $request)
     {
-        $this->thing->fill($request->get('thing'))->save();
+        $thing = $this->thing ?? new Thing();
+        $thing->fill($request->get('thing'));
+        
+        if ($request->hasFile('thing.image')) {
+            $path = $request->file('thing.image')->store('uploads', 'public'); // храни в storage/app/public/uploads
+            $thing->image = 'storage/' . $path; // путь для публичного доступа
+        }
 
+        $thing->save()
+        
         $this->thing->sizeAndCount()->delete();
         foreach ($request->get('size_and_counts', []) as $item) {
             SizeAndCount::create([
