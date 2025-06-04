@@ -34,7 +34,7 @@
                                 <a href="{{ route('receipt.return.request', $receipt->id) }}" class="btn btn-sm btn-danger">Оформить возврат</a>
                             @elseif($return && $return->status === 'approved')
                                 <a href="{{ route('invoice.generate', $receipt->id) }}" class="btn btn-sm btn-success mb-1">Скачать чек</a>
-                                <a href="{{ route('invoice.refund.generate', $receipt->id) }}" class="btn btn-sm btn-warning">Скачать чек на возврат</a>
+                                <a href="{{ route('invoice.refund.generate', $return->id) }}" class="btn btn-sm btn-warning">Скачать чек на возврат</a>
                             @elseif($return && $return->status === 'pending')
                                 <a href="{{ route('invoice.generate', $receipt->id) }}" class="btn btn-sm btn-success mb-1">Скачать чек</a>
                                 <span class="badge badge-info">Возврат на рассмотрении</span>
@@ -128,4 +128,3 @@
   </div>
 </div>
 
-@include('includes.footer')

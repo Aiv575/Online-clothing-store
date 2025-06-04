@@ -30,7 +30,7 @@
                             <input type="password" class="form-control" id="password_confirmation" placeholder="Повторите пароль" required name="user[password_confirmation]">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Зарегистироваться</button>
+                        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                     </form>
                 </div>
             </div>

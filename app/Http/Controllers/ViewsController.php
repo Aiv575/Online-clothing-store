@@ -6,8 +6,6 @@ use App\Models\Basket;
 use App\Models\Thing;
 use App\Models\Category;
 use App\Models\Receipt;
-use App\Models\ReceiptItem;
-use App\Models\ReturnModel;
 use App\Models\Wishlist;
 use Orchid\Attachment\Models\Attachment;
 
@@ -81,7 +79,7 @@ class ViewsController extends Controller
     public function category(Category $category)
     {
         $category->load(['things.imageAttachment']);
-        
+
         return view("pages.things_of_the_category", [
             'category' => $category,
         ]);
