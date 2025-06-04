@@ -28,6 +28,7 @@ RUN composer install --optimize-autoloader --no-dev
 
 # Настройки прав
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/html/database
 
 # Открытый порт (Apache)
 EXPOSE 80
