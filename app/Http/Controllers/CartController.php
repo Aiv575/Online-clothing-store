@@ -12,7 +12,7 @@ use App\Models\PromoCode;
 
 class CartController extends Controller
 {
-    public function updateSize(Request $request, Thing $thing)
+    public function updateSize(Request $request)
     {
         $size = $request->input('size');
 

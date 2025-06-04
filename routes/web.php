@@ -18,7 +18,6 @@ Route::get('/profile', [ViewsController::class, 'profile'])->name('profile')->mi
 Route::get('/basket', [ViewsController::class, 'basket'])->name('basket')->middleware('auth');
 Route::get('/thing/{thing}', [ViewsController::class, 'thing'])->name('thing.show');
 Route::post('/cart/updateSize/{thing}', [CartController::class, 'updateSize'])->name('cart.updateSize');
-Route::post('/cart/updateSize/{thing}', [CartController::class, 'updateSize'])->name('cart.updateSize');
 Route::post('/cart/add/{thing}', [CartController::class, 'add'])->name('cart.add')->middleware('auth');
 Route::post('/cart/decrease/{thing}', [CartController::class, 'decrease'])->name('cart.decrease')->middleware('auth');
 Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear')->middleware('auth');

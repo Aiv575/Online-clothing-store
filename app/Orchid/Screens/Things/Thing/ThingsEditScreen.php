@@ -40,7 +40,7 @@ class ThingsEditScreen extends Screen
      */
     public function name(): ?string
     {
-        return $this->thing->exists ? 'Редактировать товар' : 'Создание товар';
+        return $this->thing->exists ? 'Редактировать товар' : 'Создание товара';
     }
 
     /**

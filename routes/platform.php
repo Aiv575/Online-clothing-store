@@ -41,12 +41,8 @@ Route::screen('/returns', ReturnsListScreen::class)->name('platform.return.list'
 Route::screen('/return/{return?}', ReturnsEditScreen::class)->name('platform.return.edit');
 Route::screen('/reviews', ReviewsListScreen::class)->name('platform.review.list');
 Route::screen('/users', UsersListScreen::class)->name('platform.user.list');
-Route::screen('/returns', ReturnsListScreen::class)->name('platform.return.list');
 Route::screen('/sizeAndCounts', SizeAndCountsListScreen::class)->name('platform.sizeAndCount.list');
 Route::screen('/profile', ProfileScreen::class)->name('platform.profile');
-Route::screen('promocodes', PromoCodesListScreen::class)
-    ->name('platform.promocode.list');
-
-Route::screen('promocode/{promoCode?}', PromoCodesEditScreen::class)
-    ->name('platform.promocode.edit');
+Route::screen('promocodes', PromoCodesListScreen::class)->name('platform.promocode.list');
+Route::screen('promocode/{promoCode?}', PromoCodesEditScreen::class)->name('platform.promocode.edit');
 

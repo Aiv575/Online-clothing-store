@@ -60,6 +60,13 @@
                     </tbody>
                 </table>
 
+                <div class="mb-3 text-center">
+                    <form action="{{ route('cart.clear') }}" method="POST" class="d-inline-block">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Очистить корзину</button>
+                    </form>
+                </div>
+                
                 <div class="text-end">
                     @php
                         $finalTotal = session('discounted_price') ?? $total;
@@ -89,13 +96,6 @@
                 @if(session('promo_code'))
                     <input type="hidden" name="promo_code" value="{{ session('promo_code') }}">
                 @endif
-
-                <div class="mb-3 text-center">
-                    <form action="{{ route('cart.clear') }}" method="POST" class="d-inline-block">
-                        @csrf
-                        <button type="submit" class="btn btn-danger">Очистить корзину</button>
-                    </form>
-                </div>
 
                 <form action="{{ route('cart.checkout') }}" method="POST">
                     @csrf

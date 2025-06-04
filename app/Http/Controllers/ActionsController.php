@@ -27,7 +27,10 @@ class ActionsController extends Controller
             'user.password.confirmed'=> 'Поле "Пароль" и "Повторите пароль" не совпадает',
         ]);
 
-        $user = User::create($request -> input('user'));
+        $data = $request->input('user');
+        $data['password'] = bcrypt($data['password']);
+
+        $user = User::create($data);
         Auth::login($user);
         return redirect('/');
     }

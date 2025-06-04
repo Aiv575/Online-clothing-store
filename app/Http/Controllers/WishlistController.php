@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Thing;
-use Illuminate\Http\Request;
 
 class WishlistController extends Controller
 {
